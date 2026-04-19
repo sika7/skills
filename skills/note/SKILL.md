@@ -33,7 +33,7 @@ output_dir: ./notes
 
 ## コマンド：`テンプレート追加`
 
-ユーザーから新テンプレートの情報（名前・構成）を聞き、`templates/<name>.md` を作成する。frontmatterに `type` と `name` を含める。
+ユーザーから新テンプレートの情報（名前・構成）を聞き、`${CLAUDE_SKILL_DIR}/templates/<name>.md` を作成する。frontmatterに `type` と `name` を含める。
 
 ## コマンド：`テンプレート削除`
 
