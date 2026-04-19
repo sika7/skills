@@ -85,8 +85,14 @@ git commit --amend --no-edit
 
 **数コミット前に吸収（push前のみ）：**
 ```bash
-git rebase -i HEAD~3
-# エディタでまとめたいコミットの pick を fixup に変える
+# 1. 対象コミットのハッシュを確認
+git log --oneline -5
+
+# 2. fixupコミットを作成（対象ハッシュを指定）
+git commit --fixup=<commit-hash>
+
+# 3. 非インタラクティブでautosquash
+GIT_SEQUENCE_EDITOR=true git rebase --autosquash HEAD~N
 ```
 
 push済みのコミットには使わない。履歴の書き換えは他の人の環境と衝突するため。
